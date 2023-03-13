@@ -1,0 +1,9 @@
+body {
+    color: green;
+    /* font-size: 10px; */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: inherit;
+}

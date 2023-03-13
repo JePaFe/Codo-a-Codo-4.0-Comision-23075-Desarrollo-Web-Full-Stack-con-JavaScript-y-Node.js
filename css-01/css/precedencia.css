@@ -1,0 +1,11 @@
+p { /* 0,0,1 */ 
+    color: red !important /* 1000000 */;
+}
+
+.parrafo-destacado { /* 0,1,0 */
+    color: green;
+}
+
+#parrafo-tres { /* 1,0,0 */
+    color: blue;
+}

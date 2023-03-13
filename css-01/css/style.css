@@ -1,0 +1,27 @@
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+p {
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.parrafo-destacado {
+    text-align: center;
+}
+
+.segundo-parrafo {
+    border: 1px solid;
+    padding: .5em;
+}
+
+#parrafo-tres {
+    font-size: .5em;
+}
+
+h1 {
+    color: yellow
+}
