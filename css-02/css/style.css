@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+html body div p {
+    color: violet;
+}
+
+html body p {
+    color: red;
+}
+
+div.seccion-1 p {
+    color: chocolate;
+}
+
+.color-azul {
+    color: blue;
+}
+
+#parrafo-color-verde {
+    color: green;
+}
