@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 10px */
+}
+
+h1 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid yellow;
+    padding: 1rem;
+    margin-bottom: 1em;
+}
+
+div {
+    font-size: 1.5em;
+    background-color: red;
+    min-height: 200vh;
+    width: 50vw;
+}
+
+p {
+    font-size: 2em;
+}
+
+span {
+    font-size: 2rem;
+}
+
+img {
+    max-width: 100%;
+    padding: 1rem;
+}
+
+section {
+    width: 50vw;
+    height: 150px;
+    background-color: gray;
+}
