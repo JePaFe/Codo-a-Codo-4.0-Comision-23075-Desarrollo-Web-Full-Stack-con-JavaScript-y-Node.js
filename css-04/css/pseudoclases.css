@@ -1,0 +1,25 @@
+/* section p:nth-child(odd) {
+    color: red;
+} */
+
+/* p:nth-of-type(3) {
+    color: green;
+} */
+
+.destacado {
+    color: red;
+}
+
+/* p::first-line {
+    color: green;
+    background-color: brown;
+} */
+
+p::before {
+    content: '- ';
+}
+
+p::after {
+    content: '...';
+    color: darkorange;
+}
