@@ -1,0 +1,43 @@
+body {
+  background-color: gray;
+}
+.containter {
+  color: white;
+  background-color: lightyellow;
+  border: 1px solid black;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex-flow: row wrap; */
+  min-height: 90vh;
+}
+.item {
+  border: 1px solid black;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.item-1 {
+  background-color: blue;
+}
+.item-2 {
+  background-color: green;
+  width: 100px;
+}
+.item-3 {
+  background-color: red;
+  height: 100px;
+}
+.item-4 {
+  background-color: violet;
+  width: 200px;
+}
+.item-5 {
+  background-color: brown;
+  width: 150px;
+  height: 100px;
+}
+.item-6 {
+  background-color: goldenrod;
+  width: 250px;
+}
