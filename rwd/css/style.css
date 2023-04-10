@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: snow;
+  background-color: aquamarine;
+  max-width: 1000px;
+  margin: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 7rem 1fr 4rem;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  gap: 0.5em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+header,
+main,
+aside,
+footer {
+  padding: 1em;
+}
+
+header {
+  background-color: red;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+}
+
+section.cac-carousel {
+  grid-area: carousel;
+}
+
+section.banner {
+  grid-area: banner;
+  background-image: url(../img/banner.jpg);
+  background-position: center top;
+}
+
+main {
+  background-color: darkorange;
+  grid-area: main;
+  background-image: url(../img/banner.jpg);
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  background-position: bottom 10px right 20px;
+}
+
+aside {
+  display: none;
+  background-color: green;
+}
+
+footer {
+  background-color: blue;
+  grid-area: footer;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    grid-template-columns: 3fr minmax(15rem, 1fr);
+    grid-template-rows: 7rem 200px 10rem 1fr 4rem;
+    grid-template-areas:
+      "header header"
+      "carousel carousel"
+      "banner banner"
+      "main aside"
+      "footer footer";
+  }
+  aside {
+    display: block;
+  }
+
+  header span {
+    display: none;
+  }
+}
+
+.show {
+  top: 7rem;
+  transition: top 1s;
+}
+
+@media (max-width: 767px) {
+  header span {
+    display: block;
+  }
+
+  nav {
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: -100vh;
+    height: calc(100% - 7rem);
+    background-color: darkgray;
+    transition: top 1s;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 1em 0;
+  }
+}
+
+@media print {
+  body {
+    grid-template-columns: 3fr minmax(15rem, 1fr);
+    grid-template-rows: 7rem 10rem 1fr 4rem;
+    grid-template-areas:
+      "header header"
+      "banner banner"
+      "main aside"
+      "footer footer";
+  }
+
+  section.cac-carousel {
+    display: none;
+  }
+
+  aside {
+    display: block;
+  }
+}
