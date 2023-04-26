@@ -1,0 +1,7 @@
+main p:nth-child(3) {
+  color: red;
+}
+
+.error {
+  color: red;
+}
