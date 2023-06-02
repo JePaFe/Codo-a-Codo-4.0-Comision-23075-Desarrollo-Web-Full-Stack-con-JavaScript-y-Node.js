@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Producto</title>
+  </head>
+  <body>
+    <h1>Editar Producto</h1>
+
+    <form action="/productos/update?_method=PUT" method="post">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" value="Producto 2" />
+      </div>
+      <div>
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" name="precio" value="10" />
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
