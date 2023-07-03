@@ -1,0 +1,21 @@
+<h2>Crear producto</h2>
+<form action="/products" method="post" enctype="multipart/form-data">
+  <div>
+    <label for="name">Nombre: </label>
+    <input type="text" name="name" id="name" />
+  </div>
+  <div>
+    <label for="description">Descripción: </label>
+    <textarea
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <div>
+    <label for="image">Imagen: </label>
+    <input type="file" name="image" id="image" accept="image/*" />
+  </div>
+  <button type="submit">Crear</button>
+</form>

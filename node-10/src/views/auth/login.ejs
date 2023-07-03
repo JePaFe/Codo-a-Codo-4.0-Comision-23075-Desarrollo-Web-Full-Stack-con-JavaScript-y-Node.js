@@ -1,0 +1,31 @@
+<% if (typeof errors !='undefined' ) { %> <% errors.forEach(error=> { %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <%= error.msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% }) %> <% } %>
+
+<h2>Iniciar sección</h2>
+
+<form action="/login" method="post">
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      value="<%= values.email %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="password" name="password" />
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

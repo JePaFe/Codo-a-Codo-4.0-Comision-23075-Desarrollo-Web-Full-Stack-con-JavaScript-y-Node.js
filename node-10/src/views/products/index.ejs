@@ -1,0 +1,21 @@
+<h2>Listado de productos</h2>
+<a href="/products/create" class="btn btn-sm btn-primary">Crear</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rows.forEach((product) => { %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= product.name %></td>
+      <td></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

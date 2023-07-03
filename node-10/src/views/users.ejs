@@ -1,0 +1,27 @@
+<div class="row align-items-center">
+  <div class="col">
+    <h2>Listado de usuarios</h2>
+  </div>
+  <div class="col text-end">
+    <a href="/users/create" class="btn btn-sm btn-primary">Crear</a>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Correo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rows.forEach((user) => { %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
