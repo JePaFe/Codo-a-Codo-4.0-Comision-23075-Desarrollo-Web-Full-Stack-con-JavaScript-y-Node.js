@@ -1,0 +1,45 @@
+<h2>Listado de roles</h2>
+<a href="/roles/create" class="btn btn-sm btn-primary">Crear</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rows.forEach((role) => { %>
+    <tr>
+      <td><%= role.id %></td>
+      <td><%= role.name %></td>
+      <td class="text-end">
+        <a href="/roles/edit/<%= role.id %>" class="btn btn-sm btn-info"
+          >Editar</a
+        >
+        <form
+          class="form-delete"
+          action="/roles/<%= role.id %>?_method=DELETE"
+          method="post"
+          style="display: inline-block"
+        >
+          <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener("submit", (event) => {
+    if (event.target.classList.contains("form-delete")) {
+      event.preventDefault();
+
+      if (confirm("¿Esta seguro?")) {
+        event.target.submit();
+      }
+    }
+  });
+</script>

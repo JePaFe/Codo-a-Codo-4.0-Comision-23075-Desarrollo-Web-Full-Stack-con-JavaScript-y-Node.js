@@ -1,0 +1,28 @@
+<% if (typeof errors !='undefined' ) { %> <% errors.forEach(error=> { %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error.msg %>
+    <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+    ></button>
+</div>
+<% }) %> <% } %>
+
+<h1>Editar Role</h1>
+
+<form action="/roles?_method=PUT" method="post">
+    <input type="hidden" name="id" value="<%= values.id %>" />
+    <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        value="<%= values.name %>"
+    />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
