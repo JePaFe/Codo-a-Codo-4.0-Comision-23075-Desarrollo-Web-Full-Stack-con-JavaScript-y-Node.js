@@ -73,10 +73,10 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/forgot", controller.forgot);
-router.post("/forgot", forgotValidations, controller.postForgot);
+// router.get("/forgot", controller.forgot);
+// router.post("/forgot", forgotValidations, controller.postForgot);
 
-router.get("/reset", controller.reset);
-router.post("/reset/:id/:token", controller.postReset);
+// router.get("/reset", controller.reset);
+// router.post("/reset/:id/:token", controller.postReset);
 
 module.exports = router;

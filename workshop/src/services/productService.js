@@ -32,15 +32,21 @@ const store = async (body, file) => {
 };
 
 const update = async (body, file) => {
-  const row = await findOne(params);
+  const row = await model.findOne(body);
 
-  if (row[0].image) {
+  if (file && row[0].image) {
     if (fs.existsSync(`public/uploads/${row[0].image}`)) {
       fs.unlinkSync(`public/uploads/${row[0].image}`);
     }
   }
 
-  const result = await model.update(body, file);
+  body.image = row[0].image;
+
+  if (file) {
+    body.image = file.filename;
+  }
+
+  const result = await model.update(body);
 
   if (result.affectedRows > 0) {
     return "Registro actualizado";

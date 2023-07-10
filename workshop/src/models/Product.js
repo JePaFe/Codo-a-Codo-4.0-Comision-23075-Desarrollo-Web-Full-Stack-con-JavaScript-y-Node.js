@@ -50,13 +50,8 @@ const store = async (params, file) => {
   }
 };
 
-const update = async (params, file) => {
-  let image = null;
-
-  if (file) {
-    image = file.filename;
-  }
-  const { id, name, description, category_id } = params;
+const update = async (params) => {
+  const { id, name, description, category_id, image } = params;
   try {
     const [result] = await conn.query("UPDATE products SET ? WHERE ?", [
       { name, description, category_id, image },
