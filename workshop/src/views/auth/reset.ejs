@@ -1,0 +1,22 @@
+<%- include('../partials/errors') %>
+
+<h1>Reset</h1>
+
+<form action="/register" method="post">
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="password" name="password" />
+  </div>
+  <div class="mb-3">
+    <label for="password_confirmation" class="form-label"
+      >Confirmar contraseña</label
+    >
+    <input
+      type="password"
+      class="form-control"
+      id="password_confirmation"
+      name="password_confirmation"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

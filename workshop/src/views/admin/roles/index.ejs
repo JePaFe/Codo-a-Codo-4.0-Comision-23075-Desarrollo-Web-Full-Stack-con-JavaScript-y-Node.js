@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <h1>Roles</h1>
+    </div>
+    <div class="col text-end">
+      <a href="/admin/roles/create" class="btn btn-sm btn-primary">Crear</a>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (typeof rows == 'object') { %> <% rows.forEach(role => { %>
+      <tr>
+        <td><%= role.id %></td>
+        <td><%= role.name %></td>
+        <td class="text-end">
+          <a href="/admin/roles/edit/<%= role.id %>" class="btn btn-sm btn-info"
+            >Editar</a
+          >
+          <form
+            class="form-delete"
+            action="/admin/roles/<%= role.id %>?_method=DELETE"
+            method="post"
+            style="display: inline-block"
+          >
+            <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %> <% } %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.addEventListener("submit", (event) => {
+    if (event.target.classList.contains("form-delete")) {
+      event.preventDefault();
+
+      if (confirm("¿Esta seguro?")) {
+        event.target.submit();
+      }
+    }
+  });
+</script>

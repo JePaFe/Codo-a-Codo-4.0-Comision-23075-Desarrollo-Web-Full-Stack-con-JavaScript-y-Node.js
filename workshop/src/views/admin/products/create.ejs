@@ -1,0 +1,42 @@
+<%- include('../partials/errors') %>
+
+<h1>Crear Producto</h1>
+
+<form action="/admin/products" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      value="<%= values.name %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <textarea class="form-control" id="description" name="description" rows="3">
+<%= values.description %></textarea
+    >
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Categoría</label>
+    <select class="form-select" name="category_id" id="category">
+      <option></option>
+      <% categories.forEach(category => { %>
+      <option value="<%= category.id %>" <%=values.category_id==category.id ? 'selected' : '' %>><%= category.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Imagen: </label>
+    <input
+      type="file"
+      class="form-control"
+      name="image"
+      id="image"
+      accept="image/*"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

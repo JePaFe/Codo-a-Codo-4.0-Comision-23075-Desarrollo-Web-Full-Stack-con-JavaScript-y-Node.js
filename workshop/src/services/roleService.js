@@ -1,5 +1,4 @@
-const model = require("../models/User");
-const bcryptjs = require("bcryptjs");
+const model = require("../models/Role");
 
 const findAll = async () => {
   const rows = await model.findAll();
@@ -22,14 +21,16 @@ const findOne = async (params) => {
 };
 
 const store = async (body) => {
-  body.password = await bcryptjs.hash(body.password, 8);
+  const result = await model.store(body);
 
-  return await model.store(body);
+  if (result.affectedRows > 0) {
+    return "Registro creado";
+  }
+
+  return result;
 };
 
 const update = async (body) => {
-  body.password = await bcryptjs.hash(body.password, 8);
-
   const result = await model.update(body);
 
   if (result.affectedRows > 0) {
@@ -51,43 +52,10 @@ const destroy = async (params) => {
   return "El registro no existe";
 };
 
-const roles = async (params) => {
-  const rows = await model.roles(params);
-  return rows;
-};
-
-const setRole = async (body) => {
-  const result = await model.setRole(body);
-
-  if (result.affectedRows > 0) {
-    return "Registro creado";
-  }
-
-  return result;
-};
-
-const roleDestroy = async (params) => {
-  const result = await model.roleDestroy(params);
-
-  if (result.affectedRows > 0) {
-    return "Registro eliminado";
-  }
-
-  return "El registro no existe";
-};
-
-const hasRole = async (params) => {
-  return await model.hasRole(params);
-};
-
 module.exports = {
   findAll,
   findOne,
   store,
   update,
   destroy,
-  roles,
-  setRole,
-  roleDestroy,
-  hasRole,
 };

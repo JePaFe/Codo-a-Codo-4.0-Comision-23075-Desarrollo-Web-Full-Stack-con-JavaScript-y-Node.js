@@ -1,0 +1,28 @@
+<div class="container">
+  <% if (typeof errors !='undefined' ) { %> <% errors.forEach(error=> { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error.msg %>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  <% }) %> <% } %>
+
+  <h1>Role Usuario <%= user.email %></h1>
+
+  <form action="/admin/users/roles/store/<%= user.id %>" method="post">
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+      <select class="form-select" name="role_id" id="role">
+        <option></option>
+        <% roles.forEach(role => { %>
+        <option value="<%= role.id %>" <%=values.role_id==role.id ? 'selected' : '' %>><%= role.name %></option>
+        <% }) %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>
